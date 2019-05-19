@@ -1,5 +1,19 @@
 easy_admin:
-    entities:
-        # List the entity class name you want to manage
-        - App\Entity\System
-        - App\Entity\Epic
+  entities:
+    System:
+      class: App\Entity\System
+    Epic:
+      class: App\Entity\Epic
+      label: 'Epic list'
+      list:
+        actions: ['show']
+        fields:
+        - name
+        - system
+      show:
+        fields:
+        - name
+        - system
+        - games
+    Games:
+      class: App\Entity\Game
